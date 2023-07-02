@@ -1,4 +1,4 @@
-# batch-processing-boilerplate-code
+# batch-processing-template-code
 Batch processing refers to the execution of a series of tasks or operations on a large volume of data in a batch.
 Generally, it is preferable to perform small, fast transactions rather than large, long-running transactions.
 
