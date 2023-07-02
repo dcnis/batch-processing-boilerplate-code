@@ -31,8 +31,10 @@ class ServiceTest {
         Mockito.when(databaseMapper.insert(List.of("Theodor", "Christian"))).thenReturn(2);
         Mockito.when(databaseMapper.insert(List.of("Rudolf"))).thenReturn(1);
 
+        int batchSize = 2;
+
         // WHEN
-        int count = testee.batchInsert(names, 2);
+        int count = testee.batchInsert(names, batchSize);
 
         // THEN
         Mockito.verify(databaseMapper, Mockito.times(3)).insert(ArgumentMatchers.anyList());
