@@ -15,6 +15,7 @@ import java.util.List;
 @MockitoSettings
 class ServiceTest {
 
+
     @Mock
     private DatabaseMapper databaseMapper;
 
@@ -24,7 +25,6 @@ class ServiceTest {
     @Test
     public void shouldInsert3batches(){
         // GIVEN
-
         List<String> names = List.of("Anna", "Berta", "Theodor", "Christian", "Rudolf");
 
         Mockito.when(databaseMapper.insert(List.of("Anna", "Berta"))).thenReturn(2);
@@ -43,5 +43,6 @@ class ServiceTest {
         Mockito.verify(databaseMapper, Mockito.times(1)).insert(List.of("Rudolf"));
         Assertions.assertThat(count).isEqualTo(5);
     }
+
 
 }
